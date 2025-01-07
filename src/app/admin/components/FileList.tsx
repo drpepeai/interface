@@ -13,7 +13,7 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
   const loadFiles = useCallback(async (isRefresh = false) => {
     setLoading(true);
     try {
-      const response = await getFiles(isRefresh ? 0 : page * 10);
+      const response = await getFiles(isRefresh ? 0 : page * 50);
       // Deduplicate files based on file_id
       const newFiles = response.results;
       if (isRefresh) {
@@ -29,7 +29,7 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
         setFiles(uniqueFiles);
       }
 
-      setHasMore(response.results.length === 10);
+      setHasMore(response.results.length === 50);
       if (isRefresh) {
         setPage(0);
       }
