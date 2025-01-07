@@ -62,7 +62,7 @@ export const uploadText = async (name:string, contents:string) => {
 };
 
 // Get list of files
-export const getFiles = async (offset = 0, limit = 10, order_dir = 'desc') => {
+export const getFiles = async (offset = 0, limit = 50, order_dir = 'desc') => {
   const response = await axios({
     url: `${SUPAVEC_API}/user_files`,
     method: 'POST',
@@ -89,7 +89,7 @@ export const getFiles = async (offset = 0, limit = 10, order_dir = 'desc') => {
  * @param {number} k - The number of results to return.
  * @returns {Promise<object>} - The response data from the server.
 */
-export const searchEmbeddings = async (query:string, file_ids:string[], k = 3) => {
+export const searchEmbeddings = async (query:string, file_ids:string[], k = 10) => {
   const response = await axios({
     url: `${SUPAVEC_API}/embeddings`,
     method: 'POST',
