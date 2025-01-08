@@ -13,7 +13,7 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
   const loadFiles = useCallback(async (isRefresh = false) => {
     setLoading(true);
     try {
-      const response = await getFiles(isRefresh ? 0 : page * 50);
+      const response = await getFiles(isRefresh ? 0 : page * 100);
       // Deduplicate files based on file_id
       const newFiles = response.results;
       if (isRefresh) {
@@ -29,7 +29,7 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
         setFiles(uniqueFiles);
       }
 
-      setHasMore(response.results.length === 50);
+      setHasMore(response.results.length === 100);
       if (isRefresh) {
         setPage(0);
       }
@@ -59,9 +59,39 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
     <div className="bg-white rounded-lg shadow-md p-6">
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-xl font-semibold">Your Files</h2>
-        <span className="text-sm text-gray-500">
-          {files.length} total files
+        <span>
+          <span className="text-sm text-gray-500">
+            {files.length} total files | {" "}
+          </span>
+          <span className="text-sm text-gray-500">
+            {selectedFiles.length} selected files
+          </span>
         </span>
+      </div>
+      <div className='flex flex-row items-center space-x-2 mb-4 justify-end'>
+        {!loading && hasMore && (
+          <button
+            type="button"
+            className="rounded bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            onClick={() => setPage(p => p + 1)}
+          >
+            Load More
+          </button>
+        )}
+        <button
+          type="button"
+          className="rounded bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          onClick={() => setSelectedFiles([])}
+        >
+          Deselect All
+        </button>
+        <button
+          type="button"
+          className="rounded bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          onClick={() => setSelectedFiles(files.map((file: any) => file.file_id))}
+        >
+          Select All
+        </button>
       </div>
 
       {loading ? (
@@ -115,18 +145,6 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
             );
           })}
         </div>
-      )}
-
-      {!loading && hasMore && (
-        <button
-          onClick={() => setPage(p => p + 1)}
-          className="mt-4 text-blue-500 hover:text-blue-700 font-medium flex items-center"
-        >
-          Load More
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-          </svg>
-        </button>
       )}
     </div>
   );

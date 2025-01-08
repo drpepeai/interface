@@ -11,7 +11,7 @@ const GAIA_API = 'https://llama3b.gaia.domains/v1/chat/completions';
  * @param {File} file - The file to upload.
  * @returns {Promise<object>} - The response data from the server.
 */
-export const uploadFile = async (file:File) => {
+export const uploadFile = async (file: File) => {
   try {
     // Create a new FormData instance
     const formData = new FormData();
@@ -32,7 +32,7 @@ export const uploadFile = async (file:File) => {
 
     return response.data;
   } catch (error) {
-    console.log({error})
+    console.log({ error })
     throw new Error("File upload error");
   }
 };
@@ -44,7 +44,7 @@ export const uploadFile = async (file:File) => {
  * @param {string} contents - The text content to upload.
  * @returns {Promise<object>} - The response data from the server.
 */
-export const uploadText = async (name:string, contents:string) => {
+export const uploadText = async (name: string, contents: string) => {
   const response = await axios({
     url: `${SUPAVEC_API}/upload_text`,
     method: 'POST',
@@ -62,7 +62,7 @@ export const uploadText = async (name:string, contents:string) => {
 };
 
 // Get list of files
-export const getFiles = async (offset = 0, limit = 50, order_dir = 'desc') => {
+export const getFiles = async (offset = 0, limit = 100, order_dir = 'desc') => {
   const response = await axios({
     url: `${SUPAVEC_API}/user_files`,
     method: 'POST',
@@ -89,17 +89,22 @@ export const getFiles = async (offset = 0, limit = 50, order_dir = 'desc') => {
  * @param {number} k - The number of results to return.
  * @returns {Promise<object>} - The response data from the server.
 */
-export const searchEmbeddings = async (query:string, file_ids:string[], k = 10) => {
+export const searchEmbeddings = async (query: string, file_ids: string[], k = 3) => {
+  console.log("searchEmbeddings query: ", { query, file_ids, k })
   const response = await axios({
     url: `${SUPAVEC_API}/embeddings`,
     method: 'POST',
     headers: {
       authorization: process.env.NEXT_PUBLIC_SUPAVEC_API_KEY,
     },
-    data: { query, file_ids, k }
+    data: { query, file_ids, k },
+    timeout: 30_000
   });
 
+  console.log("searchEmbeddings response: ", { response })
+
   if (response.status !== 200) {
+    console.log("searchEmbeddings error: ", { response })
     throw new Error('Failed to search embeddings');
   }
 
@@ -112,7 +117,7 @@ export const searchEmbeddings = async (query:string, file_ids:string[], k = 10) 
  * @param {string} context - The context from documents to provide for the question.
  * @returns {Promise<object>} - The response data from the server.
 */
-export const askQuestion = async (question:string, context:string) => {
+export const askQuestion = async (question: string, context: string) => {
   try {
     // Format the prompt with context
     const prompt = `Context from documents: ${context}\n\nQuestion: ${question}\n\nAnswer based on the provided context:`;
@@ -125,9 +130,11 @@ export const askQuestion = async (question:string, context:string) => {
       model: 'llama'
     });
 
+    console.log("askQuestion response: ", { response })
+
     return response.data;
   } catch (error) {
-    console.log({error})
+    console.log({ error })
     throw new Error('Failed to ask question');
   }
 };
