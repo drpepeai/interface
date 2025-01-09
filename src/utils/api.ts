@@ -62,7 +62,7 @@ export const uploadText = async (name: string, contents: string) => {
 };
 
 // Get list of files
-export const getFiles = async (offset = 0, limit = 100, order_dir = 'desc') => {
+export const getFiles = async (offset = 0, limit = 500, order_dir = 'desc') => {
   const response = await axios({
     url: `${SUPAVEC_API}/user_files`,
     method: 'POST',

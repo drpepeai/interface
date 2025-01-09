@@ -1,49 +1,23 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react';
-import { getFiles } from '@/utils/api';
 import CheckboxContainer from './CheckboxContainer';
 import Dropdown from './Dropdown';
 import { categories } from '@/utils/categories';
 
-export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refreshTrigger }: { onFileSelect: Function, setSelectedFiles: Function, selectedFiles: any, refreshTrigger: any }) {
-  const [files, setFiles] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(0);
-  const [hasMore, setHasMore] = useState(true);
+interface FileListProps {
+  onFileSelect: (fileId: string) => void;
+  setSelectedFiles: (fileIds: string[]) => void;
+  selectedFiles: string[];
+  refreshTrigger: number;
+  loadFiles: (isRefresh?: boolean, fileOffset?: number, limit?: number) => Promise<void>;
+  files: any[];
+  hasMore: boolean;
+  loading: boolean;
+}
+
+export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refreshTrigger, loadFiles, files, hasMore, loading }: FileListProps) {
   const [activeCategories, setActiveCategories] = useState([]);
-
-  // Move loadFiles into useCallback to prevent unnecessary recreations
-  const loadFiles = useCallback(async (isRefresh = false, fileOffset = 0, limit = 100) => {
-    setLoading(true);
-    try {
-      const response = await getFiles(fileOffset, limit);
-      // Deduplicate files based on file_id
-      const newFiles = response.results;
-      if (isRefresh) {
-        // For refresh, just use the new files after deduplication
-        const uniqueFiles = Array.from(new Map(newFiles.map((file: any) => [file.file_id, file])).values());
-        setSelectedFiles(uniqueFiles.map((file: any) => file.file_id));
-        setFiles(uniqueFiles);
-      } else {
-        // For pagination, combine with existing files and deduplicate
-        const combinedFiles = [...files, ...newFiles];
-        const uniqueFiles = Array.from(new Map(combinedFiles.map((file: any) => [file.file_id, file])).values());
-        setSelectedFiles(uniqueFiles.map((file: any) => file.file_id));
-        setFiles(uniqueFiles);
-      }
-
-      setHasMore(response.results.length === 100);
-      if (isRefresh) {
-        setPage(0);
-      }
-    } catch (error) {
-      console.error('Error loading files:', error);
-    } finally {
-      setLoading(false);
-    }
-  }, [page, files, setSelectedFiles]);
-
 
   const selectCategory = useCallback((category: string) => {
     let newActiveCategories = [...activeCategories]
@@ -75,7 +49,7 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
 
   useEffect(() => {
     async function loadAllFiles() {
-      await loadFiles(false, 0, 250);
+      await loadFiles(false, 0, 500);
     }
     loadAllFiles();
   }, []);
@@ -100,15 +74,6 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
         </span>
       </div>
       <div className='flex flex-row items-center space-x-2 mb-4 justify-end'>
-        {/* {!loading && hasMore && (
-          <button
-            type="button"
-            className="rounded bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            onClick={() => setPage(p => p + 1)}
-          >
-            Load More
-          </button>
-        )} */}
         <button
           type="button"
           className="rounded bg-indigo-600 px-2 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
