@@ -124,7 +124,7 @@ export const askQuestion = async (question: string, context: string) => {
 
     const response = await axios.post(GAIA_API, {
       messages: [
-        { role: 'system', content: 'You are a helpful assistant that answers questions based on provided document context.' },
+        { role: 'system', content: 'You are an AI assistant tasked with providing detailed answers based on the given context. Your goal is to analyze the information provided and formulate a comprehensive, well-structured response to the question.\n\n When answering questions:\n1. Thoroughly analyze both the context from the knowledge base and the specific question\n 2. Organize your thoughts and plan your response to ensure a logical flow\n 3. Formulate a detailed answer using only information from the provided context\n 4. Be comprehensive while staying focused on the question\n 5. If the available context lacks sufficient information, clearly state this\n Important: Base your response solely on the provided context from the knowledge base and question.' },
         { role: 'user', content: prompt }
       ],
       model: 'llama'
