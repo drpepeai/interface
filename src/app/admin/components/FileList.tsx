@@ -60,6 +60,8 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
     }
   }, [refreshTrigger, loadFiles]);
 
+  console.log("files: ", files)
+
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
       <div className="flex items-center justify-between mb-4">
