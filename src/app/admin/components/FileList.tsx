@@ -2,18 +2,22 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { getFiles } from '@/utils/api';
+import CheckboxContainer from './CheckboxContainer';
+import Dropdown from './Dropdown';
+import { categories } from '@/utils/categories';
 
 export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refreshTrigger }: { onFileSelect: Function, setSelectedFiles: Function, selectedFiles: any, refreshTrigger: any }) {
   const [files, setFiles] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(0);
   const [hasMore, setHasMore] = useState(true);
+  const [activeCategories, setActiveCategories] = useState([]);
 
   // Move loadFiles into useCallback to prevent unnecessary recreations
-  const loadFiles = useCallback(async (isRefresh = false) => {
+  const loadFiles = useCallback(async (isRefresh = false, fileOffset = 0, limit = 100) => {
     setLoading(true);
     try {
-      const response = await getFiles(isRefresh ? 0 : page * 100);
+      const response = await getFiles(fileOffset, limit);
       // Deduplicate files based on file_id
       const newFiles = response.results;
       if (isRefresh) {
@@ -40,18 +44,45 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
     }
   }, [page, files, setSelectedFiles]);
 
+
+  const selectCategory = useCallback((category: string) => {
+    let newActiveCategories = [...activeCategories]
+    if (activeCategories.includes(category)) {
+      newActiveCategories = newActiveCategories.filter((c: string) => c !== category);
+    } else {
+      newActiveCategories.push(category);
+    }
+    const categoryFiles = newActiveCategories.map((category: any) => categories[category].files.map((file: any) => file.id)).flat()
+
+    setActiveCategories(newActiveCategories);
+    setSelectedFiles(categoryFiles)
+  }, [files, setSelectedFiles, setActiveCategories]);
+
+  const selectAll = useCallback(() => {
+    setActiveCategories(Object.keys(categories))
+    setSelectedFiles(files.map((file: any) => file.file_id))
+  }, [files, setSelectedFiles, setActiveCategories]);
+
+  const deselectAll = useCallback(() => {
+    setActiveCategories([])
+    setSelectedFiles([])
+  }, [files, setSelectedFiles, setActiveCategories]);
+
   // Check for duplicate file names
   const getDuplicateStatus = (fileName: any) => {
     return files.filter((file: any) => file.file_name === fileName).length > 1;
   };
 
   useEffect(() => {
-    loadFiles();
-  }, [page]);
+    async function loadAllFiles() {
+      await loadFiles(false, 0, 250);
+    }
+    loadAllFiles();
+  }, []);
 
   useEffect(() => {
     if (refreshTrigger > 0) {
-      loadFiles(true); // Pass true to indicate this is a refresh
+      loadFiles(true, 0); // Pass true to indicate this is a refresh
     }
   }, [refreshTrigger, loadFiles]);
 
@@ -69,7 +100,7 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
         </span>
       </div>
       <div className='flex flex-row items-center space-x-2 mb-4 justify-end'>
-        {!loading && hasMore && (
+        {/* {!loading && hasMore && (
           <button
             type="button"
             className="rounded bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -77,21 +108,29 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
           >
             Load More
           </button>
-        )}
+        )} */}
         <button
           type="button"
-          className="rounded bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          onClick={() => setSelectedFiles([])}
-        >
-          Deselect All
-        </button>
-        <button
-          type="button"
-          className="rounded bg-indigo-600 px-2 py-1 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          onClick={() => setSelectedFiles(files.map((file: any) => file.file_id))}
+          className="rounded bg-indigo-600 px-2 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          onClick={selectAll}
         >
           Select All
         </button>
+        <button
+          type="button"
+          className="rounded bg-indigo-600 px-2 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          onClick={deselectAll}
+        >
+          Deselect All
+        </button>
+        <Dropdown>
+          <CheckboxContainer
+            title="Categories"
+            items={Object.keys(categories).map((key: string) => ({ label: categories[key].title, description: categories[key].description, id: key }))}
+            onSelect={selectCategory}
+            selected={activeCategories}
+          />
+        </Dropdown>
       </div>
 
       {loading ? (
