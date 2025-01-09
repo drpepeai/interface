@@ -6,12 +6,18 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { searchEmbeddings, askQuestion } from '@/utils/api';
 import { useState } from 'react';
+import { Label, Listbox, ListboxButton, ListboxOption, ListboxOptions, TabPanel, TabPanels, TabGroup, TabList, Tab } from '@headlessui/react'
+import { AtSymbolIcon, CalendarIcon, CodeBracketIcon, Cog6ToothIcon, LinkIcon, PaperClipIcon, TagIcon, UserCircleIcon } from '@heroicons/react/20/solid'
+import Dropdown from './Dropdown';
 
 export function ChatInterface({ selectedFiles }: { selectedFiles: any }) {
     const [question, setQuestion] = useState('');
     const [messages, setMessages] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [k, setK] = useState(3);
+    const [systemPrompt, setSystemPrompt] = useState('');
+
 
     const handleSubmit = async (e: any) => {
         console.log("START")
@@ -24,7 +30,7 @@ export function ChatInterface({ selectedFiles }: { selectedFiles: any }) {
         try {
             console.log("SEARCHING EMBEDDINGS")
             // First, search for relevant context
-            const searchResponse = await searchEmbeddings(question, selectedFiles);
+            const searchResponse = await searchEmbeddings(question, selectedFiles, k);
             console.log("SEARCH RESPONSE: ", { searchResponse })
             const context = searchResponse.documents
                 .map((doc: any) => doc.content)
@@ -32,7 +38,8 @@ export function ChatInterface({ selectedFiles }: { selectedFiles: any }) {
 
             // Then, ask Gaia using the context
             console.log("ASKING QUESTION")
-            const answer = await askQuestion(question, context);
+            const systemPromptTrimmed = systemPrompt.trim();
+            const answer = await askQuestion(question, context, systemPromptTrimmed.length > 0 ? systemPromptTrimmed : undefined);
 
             setMessages((prev: any) => [
                 ...prev,
@@ -82,10 +89,10 @@ export function ChatInterface({ selectedFiles }: { selectedFiles: any }) {
                     <div
                         key={index}
                         className={`p-4 rounded-lg ${message.role === 'user'
-                                ? 'bg-blue-50 ml-8'
-                                : message.role === 'system'
-                                    ? 'bg-red-50'
-                                    : 'bg-gray-50 mr-8'
+                            ? 'bg-blue-50 ml-8'
+                            : message.role === 'system'
+                                ? 'bg-red-50'
+                                : 'bg-gray-50 mr-8'
                             }`}
                     >
                         <p className="text-sm font-medium mb-2 text-gray-600">
@@ -143,25 +150,73 @@ export function ChatInterface({ selectedFiles }: { selectedFiles: any }) {
                     {error}
                 </div>
             )}
+            <form onSubmit={handleSubmit} >
+                <label htmlFor="comment" className="sr-only">
+                    Comment
+                </label>
+                <div>
+                    <textarea
+                        id="comment"
+                        name="comment"
+                        rows={3}
+                        placeholder={selectedFiles.length === 0
+                            ? "Please select documents first..."
+                            : "Ask a question about the selected documents..."}
+                        className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                        disabled={selectedFiles.length === 0 || loading}
+                        value={question}
+                        onChange={(e) => setQuestion(e.target.value)}
+                    />
+                </div>
+                <div className="mt-2 flex justify-end space-x-4">
+                    <Dropdown title="Settings">
+                        <label htmlFor="systemPrompt" className="block text-sm/6 font-medium text-gray-900">
+                            System Prompt
+                        </label>
+                        <div>
+                            <textarea
+                                id="systemPrompt"
+                                name="systemPrompt"
+                                rows={3}
+                                placeholder={selectedFiles.length === 0
+                                    ? "Please select documents first..."
+                                    : "Add your own system prompt here..."}
+                                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                                disabled={selectedFiles.length === 0 || loading}
+                                value={systemPrompt}
+                                onChange={(e) => setSystemPrompt(e.target.value)}
+                                onKeyDown={(e) => {
+                                    if (e.key === ' ') {
+                                        e.stopPropagation();
+                                    }
+                                }}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="k" className="block text-sm/6 font-medium text-gray-900">
+                                Number of Context Documents
+                            </label>
+                            <div className="mt-2">
+                                <input
+                                    id="k"
+                                    name="k"
+                                    type="number"
+                                    placeholder="3"
+                                    className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                                />
+                            </div>
+                        </div>
 
-            <form onSubmit={handleSubmit} className="flex gap-2">
-                <input
-                    type="text"
-                    value={question}
-                    onChange={(e) => setQuestion(e.target.value)}
-                    placeholder={selectedFiles.length === 0
-                        ? "Please select documents first..."
-                        : "Ask a question about the selected documents..."}
-                    className="flex-1 p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    disabled={selectedFiles.length === 0 || loading}
-                />
-                <button
-                    type="submit"
-                    disabled={!question.trim() || selectedFiles.length === 0 || loading}
-                    className="bg-blue-500 text-white px-4 py-2 rounded-lg disabled:opacity-50 hover:bg-blue-600 transition-colors"
-                >
-                    {loading ? 'Thinking...' : 'Ask'}
-                </button>
+                    </Dropdown>
+
+                    <button
+                        type="submit"
+                        disabled={!question.trim() || selectedFiles.length === 0 || loading}
+                        className="bg-blue-500 text-white px-4 py-1 rounded-lg disabled:opacity-50 hover:bg-blue-600 transition-colors"
+                    >
+                        {loading ? 'Thinking...' : 'Ask'}
+                    </button>
+                </div>
             </form>
         </div>
     );

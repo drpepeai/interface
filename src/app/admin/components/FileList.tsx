@@ -88,7 +88,7 @@ export function FileList({ onFileSelect, setSelectedFiles, selectedFiles, refres
         >
           Deselect All
         </button>
-        <Dropdown>
+        <Dropdown title="Categories">
           <CheckboxContainer
             title="Categories"
             items={Object.keys(categories).map((key: string) => ({ label: categories[key].title, description: categories[key].description, id: key }))}
