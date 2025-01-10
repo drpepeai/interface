@@ -3,12 +3,15 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { uploadFile } from '@/utils/api';
+import Dropdown from './Dropdown';
 
 export function FileUpload({ onUploadSuccess }: { onUploadSuccess: any }) {
   const [files, setFiles] = useState<File[]>([]); // Changed from single file to array
   const [uploadProgress, setUploadProgress] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<any>(null);
+  const [chunkSize, setChunkSize] = useState(1000);
+  const [chunkOverlap, setChunkOverlap] = useState(200);
 
   const handleFileChange = (e: any) => {
     const selectedFiles = Array.from(e.target.files);
@@ -40,7 +43,7 @@ export function FileUpload({ onUploadSuccess }: { onUploadSuccess: any }) {
 
     for (const file of files) {
       try {
-        const response = await uploadFile(file);
+        const response = await uploadFile(file, chunkSize, chunkOverlap);
         setUploadProgress(progress => progress + progressIncrement);
         uploadedFileIds.push(response.file_id);
 
@@ -117,17 +120,50 @@ export function FileUpload({ onUploadSuccess }: { onUploadSuccess: any }) {
         {error && (
           <div className="text-red-500 text-sm">{error}</div>
         )}
-
-        <button
-          type="submit"
-          disabled={files.length === 0 || loading}
-          className={`w-full py-2 px-4 rounded-lg text-white font-medium ${files.length === 0 || loading
-            ? 'bg-gray-400 cursor-not-allowed'
-            : 'bg-blue-500 hover:bg-blue-600'
-            }`}
-        >
-          {loading ? 'Uploading...' : 'Upload Files'}
-        </button>
+        <div className='flex flex-row space-x-4'>
+          <Dropdown title="Settings" align='left'>
+            <div>
+              <label htmlFor="chunkSize" className="block text-sm/6 font-medium text-gray-900">
+                Chunk Size
+              </label>
+              <div className="mt-2">
+                <input
+                  id="chunkSize"
+                  name="chunkSize"
+                  type="number"
+                  placeholder="1000"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  onChange={(e) => setChunkSize(parseInt(e.target.value))}
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="chunkOverlap" className="block text-sm/6 font-medium text-gray-900">
+                Chunk Overlap
+              </label>
+              <div className="mt-2">
+                <input
+                  id="chunkOverlap"
+                  name="chunkOverlap"
+                  type="number"
+                  placeholder="200"
+                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  onChange={(e) => setChunkOverlap(parseInt(e.target.value))}
+                />
+              </div>
+            </div>
+          </Dropdown >
+          <button
+            type="submit"
+            disabled={files.length === 0 || loading}
+            className={`w-full py-1 px-4 rounded-lg text-white font-medium ${files.length === 0 || loading
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-blue-500 hover:bg-blue-600'
+              }`}
+          >
+            {loading ? 'Uploading...' : 'Upload Files'}
+          </button>
+        </div>
       </form>
     </div>
   );

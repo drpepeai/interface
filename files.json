@@ -1,6 +1,587 @@
 [
   {
     "type": "pdf",
+    "file_id": "1f4dd2e1-ec1c-4d73-81f5-ae24b085feb6",
+    "created_at": "2025-01-10T09:52:54.569718+00:00",
+    "file_name": "T2.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "a51ec9ab-b73a-4112-bbeb-5e2d7dece925",
+    "created_at": "2025-01-10T09:52:45.687463+00:00",
+    "file_name": "Copy of Level 1_Boner Mastry.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "a0fee199-581d-4c4f-94db-b3f142034155",
+    "created_at": "2025-01-10T09:52:43.775793+00:00",
+    "file_name": "Copy of Level 1_Boner Tea.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "670fdc93-c0d0-4cb5-a759-37e62a5af014",
+    "created_at": "2025-01-10T09:52:42.219379+00:00",
+    "file_name": "Copy of Level 1_Testosterone.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "3cac076e-18af-485c-a823-2ca3ac43b792",
+    "created_at": "2025-01-10T09:52:40.135163+00:00",
+    "file_name": "Copy of Level 2_Boner Mastry.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "80fd85bd-3361-4ba6-92f3-1c67fb4ed476",
+    "created_at": "2025-01-10T09:52:36.406059+00:00",
+    "file_name": "Copy of Level 2_Testosterone.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "54cf1fce-c50c-4b5c-a0e3-da9192056c10",
+    "created_at": "2025-01-10T09:52:26.502327+00:00",
+    "file_name": "Level 1_Boner Combinations.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "6adb9599-9f52-4106-a330-f3b3fddbd581",
+    "created_at": "2025-01-10T09:50:12.053076+00:00",
+    "file_name": "T2.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "023c5148-a12a-416d-800b-6cadf0179bae",
+    "created_at": "2025-01-10T09:49:56.985395+00:00",
+    "file_name": "Copy of Level 1_Boner Mastry.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "5e1e370c-b0f0-467a-8898-2d00cc0ef837",
+    "created_at": "2025-01-10T09:49:55.040094+00:00",
+    "file_name": "Copy of Level 1_Boner Tea.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "c4312a37-2731-4fd5-b132-79f784145f75",
+    "created_at": "2025-01-10T09:49:52.951561+00:00",
+    "file_name": "Copy of Level 1_Testosterone.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "7e086fca-c98f-4c79-b76a-d9ee10282735",
+    "created_at": "2025-01-10T09:49:50.466503+00:00",
+    "file_name": "Copy of Level 2_Boner Mastry.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "ff7b66c6-8f68-40be-a363-68425a835949",
+    "created_at": "2025-01-10T09:49:44.040903+00:00",
+    "file_name": "Copy of Level 2_Testosterone.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "35d51cde-bc33-4c78-9f19-4d2e7a3db43b",
+    "created_at": "2025-01-10T09:47:58.812769+00:00",
+    "file_name": "Level 1_Boner Combinations.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "32778bb6-8a46-45cd-84d1-fea6b4056790",
+    "created_at": "2025-01-10T09:45:34.016201+00:00",
+    "file_name": "T2.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "dd6f4aa1-1249-4bbd-9cd9-8a31d0aa7c90",
+    "created_at": "2025-01-10T09:45:23.20571+00:00",
+    "file_name": "Copy of Level 1_Boner Mastry.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "fb898cf5-27e1-4732-b41d-d0c3f2a573b3",
+    "created_at": "2025-01-10T09:45:21.393943+00:00",
+    "file_name": "Copy of Level 1_Boner Tea.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "57074fe3-31e1-4d5a-b936-d103104dfda0",
+    "created_at": "2025-01-10T09:45:17.686901+00:00",
+    "file_name": "Copy of Level 1_Testosterone.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "649cfc33-7e3c-45b1-bfa4-9f630e706230",
+    "created_at": "2025-01-10T09:45:15.544043+00:00",
+    "file_name": "Copy of Level 2_Boner Mastry.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "1301bd04-2ed8-4d46-9abf-e0e49319b830",
+    "created_at": "2025-01-10T09:45:10.907366+00:00",
+    "file_name": "Copy of Level 2_Testosterone.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "03f0b522-10ef-4313-8eeb-41c1fb10d186",
+    "created_at": "2025-01-10T09:44:59.112539+00:00",
+    "file_name": "Level 1_Boner Combinations.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "6f846a8b-9f3e-4cb9-9337-1c147afd49ba",
+    "created_at": "2025-01-10T09:42:25.326334+00:00",
+    "file_name": "T2.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "6d668c6b-78e3-4c68-b780-0c702ccfa679",
+    "created_at": "2025-01-10T09:42:16.343119+00:00",
+    "file_name": "Copy of Level 1_Boner Mastry.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "24743e57-9932-4ed7-a33b-2dec7e5b4e8e",
+    "created_at": "2025-01-10T09:42:14.85772+00:00",
+    "file_name": "Copy of Level 1_Boner Tea.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "d12c79fa-b328-461e-84ab-bf41ef16dae5",
+    "created_at": "2025-01-10T09:42:13.64782+00:00",
+    "file_name": "Copy of Level 1_Testosterone.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "ca216cef-7dce-4413-9a1e-cb8677ebe827",
+    "created_at": "2025-01-10T09:42:12.117871+00:00",
+    "file_name": "Copy of Level 2_Boner Mastry.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "004e7290-9297-45af-8a95-b7a97eff7b29",
+    "created_at": "2025-01-10T09:42:07.694939+00:00",
+    "file_name": "Copy of Level 2_Testosterone.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "20cd2c6d-18d5-400d-97d9-2666cab96df8",
+    "created_at": "2025-01-10T09:41:57.372556+00:00",
+    "file_name": "Level 1_Boner Combinations.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "d7457a46-0dda-4866-a7fc-dfedbfd3655b",
+    "created_at": "2025-01-10T09:41:04.370847+00:00",
+    "file_name": "T2.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "f56e36df-51e7-4194-83dc-24b6d39cd7c1",
+    "created_at": "2025-01-10T09:37:08.161615+00:00",
+    "file_name": "Copy of Level 1_Boner Mastry.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "c2baa08c-52c3-4b2b-8e19-2734b99983bc",
+    "created_at": "2025-01-10T09:37:05.507262+00:00",
+    "file_name": "Copy of Level 1_Boner Tea.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "2524a516-ce99-4afb-aaa3-c418fe283a6c",
+    "created_at": "2025-01-10T09:37:03.599598+00:00",
+    "file_name": "Copy of Level 1_Testosterone.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "4dcab443-aec6-4a1c-ba76-896dd17700ad",
+    "created_at": "2025-01-10T09:37:00.344452+00:00",
+    "file_name": "Copy of Level 2_Boner Mastry.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "a8b97be6-853c-4032-9d60-cb587a25412f",
+    "created_at": "2025-01-10T09:36:53.02727+00:00",
+    "file_name": "Copy of Level 2_Testosterone.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "3862dfbc-17e4-4b79-8531-28db6bfba253",
+    "created_at": "2025-01-10T09:31:57.077267+00:00",
+    "file_name": "Level 1_Boner Combinations.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "28f26580-b343-4872-ad52-6fb5551d283e",
+    "created_at": "2025-01-10T09:22:34.70303+00:00",
+    "file_name": "Level 1_Boner Combinations.docx.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "0c3241c1-5f90-4a45-a2ce-a892ccf4f2fe",
+    "created_at": "2025-01-09T13:19:52.680443+00:00",
+    "file_name": "singh2021.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "dbab62f1-212b-42d7-8264-ba0d7fd28230",
+    "created_at": "2025-01-09T13:19:48.261527+00:00",
+    "file_name": "s13668-024-00557-5.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "a535895f-d2c0-4c3a-91d7-11ae02d483ee",
+    "created_at": "2025-01-09T13:19:43.691553+00:00",
+    "file_name": "s12302-021-00585-w.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "49b04f3b-02a6-4c99-aa3f-a1d45683c2be",
+    "created_at": "2025-01-09T13:19:39.753189+00:00",
+    "file_name": "nihms293433.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "80fb913f-baea-4523-b98e-6c23d438a982",
+    "created_at": "2025-01-09T13:19:35.937257+00:00",
+    "file_name": "ircmj-17-04-26930.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "c5ee5e64-a786-40e3-bc77-a2133e13a03e",
+    "created_at": "2025-01-09T13:19:33.279808+00:00",
+    "file_name": "Impact of environmental toxin exposure on male fertility potential - Krzastek - Translational Andrology and Urology.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "13bc8883-476a-4167-8bc9-8a161f62543c",
+    "created_at": "2025-01-09T13:19:29.639372+00:00",
+    "file_name": "ijms-21-09191.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "069104da-eadb-4b68-b7e9-3a01c14c4b13",
+    "created_at": "2025-01-09T13:19:25.641286+00:00",
+    "file_name": "antioxidants-13-00064.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "16edbc29-05e8-4ba8-8e21-b28deb843736",
+    "created_at": "2025-01-09T13:19:19.901832+00:00",
+    "file_name": "antioxidants-10-00837.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "f6ea2ec3-10d0-4abb-836c-13d27e4d20c2",
+    "created_at": "2025-01-09T13:19:10.317958+00:00",
+    "file_name": "1-s2.0-S0166445X15300540-main.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "6f9ee999-7dcf-408a-9064-643a003158ba",
+    "created_at": "2025-01-09T13:11:22.911133+00:00",
+    "file_name": "tsai2015.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "72588b2e-62ec-44da-8ee5-f385387e2228",
+    "created_at": "2025-01-09T13:11:19.856627+00:00",
+    "file_name": "Per- and polyfluoroalkyl substances impact human spermatogenesis in a stem-cell-derived model.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "f6f5b200-699a-4c29-bd9d-c99b333b0ec8",
+    "created_at": "2025-01-09T13:11:16.384913+00:00",
+    "file_name": "nihms169606.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "4cd6c89b-1b53-48ba-b210-c490b4e25ace",
+    "created_at": "2025-01-09T13:11:13.092915+00:00",
+    "file_name": "medicines-09-00004.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "a0b181fe-e38f-4136-ad47-a94100e4e270",
+    "created_at": "2025-01-09T13:09:47.721084+00:00",
+    "file_name": "liew2018.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "8c0009ee-2d3a-4a91-b924-7ae9eb1c4c24",
+    "created_at": "2025-01-09T13:09:40.749372+00:00",
+    "file_name": "kwp415.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "611a745c-1f78-4373-9b01-515c2d8dbe0f",
+    "created_at": "2025-01-09T13:06:19.359914+00:00",
+    "file_name": "ijerph-14-00691.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "5a9da199-3a0a-4808-949d-151c5daf31c9",
+    "created_at": "2025-01-09T13:06:19.115019+00:00",
+    "file_name": "fgene-12-692897.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "f81f50e6-7e33-4810-ba7b-8ab13c1f1ab0",
+    "created_at": "2025-01-09T13:06:18.764216+00:00",
+    "file_name": "file.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "4f5804cc-62ca-4a13-a95d-4bfc010935c9",
+    "created_at": "2025-01-09T13:06:18.361663+00:00",
+    "file_name": "jc.2018-01855.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "c14d44f2-e5ab-4196-8319-f0e719f5569c",
+    "created_at": "2025-01-09T13:06:17.758997+00:00",
+    "file_name": "fendo-14-1302965.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "a01d23ae-14a3-4c17-a5c2-6305f9be80af",
+    "created_at": "2025-01-09T13:05:26.35518+00:00",
+    "file_name": "fendo-12-799043.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "e16f1fbb-6d2e-4636-9047-4652d3d07c51",
+    "created_at": "2025-01-09T13:05:25.721459+00:00",
+    "file_name": "fendo-14-1175011.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "5cef4651-b59a-491b-83cd-ded759a24ea0",
+    "created_at": "2025-01-09T13:05:25.360463+00:00",
+    "file_name": "dmaa018.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "319554f2-3619-4358-b4d1-dc335e80ffa7",
+    "created_at": "2025-01-09T11:38:32.803057+00:00",
+    "file_name": "des425.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "9ca2608a-76b8-4220-b2b2-8a1b05cbddd4",
+    "created_at": "2025-01-09T11:13:32.524279+00:00",
+    "file_name": "ijms-22-02148.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "21b36720-7825-44a3-9969-7ae610a6f053",
+    "created_at": "2025-01-09T11:13:30.422447+00:00",
+    "file_name": "nihms-1757909.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "930ac6cb-94cf-43aa-a11b-d30ea00b3323",
+    "created_at": "2025-01-09T11:13:29.391368+00:00",
+    "file_name": "nguyen-et-al-2023-predicted-endocrine-disrupting-activity-of-unregulated-drinking-water-contaminants.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "80e2097e-b7a5-4aec-87c9-27af9c999709",
+    "created_at": "2025-01-09T11:13:27.888034+00:00",
+    "file_name": "bach2016.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "d6c70f38-aa43-4c12-98c1-070f35796d26",
+    "created_at": "2025-01-09T11:13:26.833823+00:00",
+    "file_name": "ijerph-18-03794.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "6122d60f-f5d2-4fb1-945d-bc0782522d9a",
+    "created_at": "2025-01-09T11:13:26.815335+00:00",
+    "file_name": "ijms-21-01929.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "6c5329ec-038e-4505-8f5f-0a83d3f406b7",
+    "created_at": "2025-01-09T11:13:25.494148+00:00",
+    "file_name": "pone.0224892.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "7a975e1c-2ded-4381-a44e-e18b862c609f",
+    "created_at": "2025-01-09T11:12:27.22099+00:00",
+    "file_name": "antioxidants-13-00076.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "75ad75a7-00a7-4a6b-b51b-07e9c8ec492a",
+    "created_at": "2025-01-09T11:12:25.883428+00:00",
+    "file_name": "1-s2.0-S0147651324000733-main.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "cceb1bb5-7835-4544-9fb7-7ccb28d21cdd",
+    "created_at": "2025-01-09T11:12:25.752772+00:00",
+    "file_name": "0160979.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "c0be87ae-d878-4b98-9926-528a59983697",
+    "created_at": "2025-01-09T11:12:24.948428+00:00",
+    "file_name": "1-s2.0-S016041202100444X-main.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "45d63579-550a-47fd-973e-03bc5fe16b3f",
+    "created_at": "2025-01-09T11:12:05.107704+00:00",
+    "file_name": "sadia-et-al-2023-occurrence-fate-and-related-health-risks-of-pfas-in-raw-and-produced-drinking-water.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "0aa59512-1ceb-457d-986c-b503d40a99b8",
+    "created_at": "2025-01-09T11:12:04.034699+00:00",
+    "file_name": "antioxidants-10-01473.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "239f4fb3-bfa0-4d1d-a33f-a369fa093095",
+    "created_at": "2025-01-09T11:12:03.940471+00:00",
+    "file_name": "antioxidants-10-01473-v4.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "cb164667-5c12-4ded-ba05-959807f6e42c",
+    "created_at": "2025-01-09T11:12:03.396216+00:00",
+    "file_name": "1-s2.0-S0147651324000733-main.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "15f7b015-97ed-4f0a-845c-4154b8315b21",
+    "created_at": "2025-01-09T11:12:01.870494+00:00",
+    "file_name": "s12302-021-00508-9.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "afb7306f-89a7-4ece-b47e-818aced3ec8f",
+    "created_at": "2025-01-09T11:12:01.284553+00:00",
+    "file_name": "ijerph-18-03794.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "2ea850fd-184b-4728-b470-0b3d07ee7571",
+    "created_at": "2025-01-09T11:12:00.656711+00:00",
+    "file_name": "wan2011.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "a707353f-29ea-451d-9487-cc2a67fa14be",
+    "created_at": "2025-01-09T11:12:00.356574+00:00",
+    "file_name": "1-s2.0-S016041202100444X-main.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "c733a0c9-71a8-41b3-8970-a3f031ab7c32",
+    "created_at": "2025-01-09T11:11:59.860681+00:00",
+    "file_name": "cureus-0016-00000053128-3.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "7faed8fe-3e3c-430d-878b-46e5df708862",
+    "created_at": "2025-01-09T11:11:59.20776+00:00",
+    "file_name": "cureus-0016-00000053128.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
+    "file_id": "79fbfae5-a8ce-4ce5-8098-0358183df09a",
+    "created_at": "2025-01-09T11:07:17.850691+00:00",
+    "file_name": "1-s2.0-S016041202100444X-main.pdf",
+    "team_id": "9ab5220d-4c67-4f57-9e3c-56d4930200b7"
+  },
+  {
+    "type": "pdf",
     "file_id": "02d74279-b03d-470a-9ea8-3a9ac6be56d1",
     "created_at": "2025-01-09T09:39:00.110077+00:00",
     "file_name": "Copy of Level 1_Boner Mastry.pdf",

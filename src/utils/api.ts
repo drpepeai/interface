@@ -9,9 +9,11 @@ const GAIA_API = 'https://llama3b.gaia.domains/v1/chat/completions';
 /**
  * Uploads a file to the server.
  * @param {File} file - The file to upload.
+ * @param {number} chunk_size - The chunk size to use for the file.
+ * @param {number} chunk_overlap - The chunk overlap to use for the file.
  * @returns {Promise<object>} - The response data from the server.
 */
-export const uploadFile = async (file: File) => {
+export const uploadFile = async (file: File, chunk_size = 1000, chunk_overlap = 200) => {
   try {
     // Create a new FormData instance
     const formData = new FormData();
@@ -22,6 +24,10 @@ export const uploadFile = async (file: File) => {
       method: 'POST',
       headers: {
         authorization: process.env.NEXT_PUBLIC_SUPAVEC_API_KEY,
+      },
+      params: {
+        chunk_size,
+        chunk_overlap
       },
       data: formData
     });
